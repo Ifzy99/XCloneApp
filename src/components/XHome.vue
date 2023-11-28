@@ -172,7 +172,6 @@
     <div class="modal-content">
       <div class="modal-header d-flex">
           <img class="mx-auto" src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.jpg" alt="" style="width: 50px;">
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="goBack"></button> -->
         <!-- <h1 class="modal-title fs-5 mx-auto ps-5" id="staticBackdropLabel">Create your account</h1> -->
       </div>
       <div class="modal-body mx-auto" style="width: 80%;">
@@ -211,10 +210,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div> -->
     </div>
   </div>
 </div>
