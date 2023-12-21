@@ -14,6 +14,10 @@
         {{ avail.name }}
        </div> -->
 
+
+
+
+
     <router-link to="/login">Login</router-link>
 </template>
 
@@ -35,5 +39,5 @@ export default {
 </script>
 
 <style>
-
+  
 </style>

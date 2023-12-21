@@ -4,6 +4,8 @@ import XHome from '../components/XHome.vue'
 import LogIn from '../components/LogIn.vue'
 import DashBoard from '../components/DashBoard.vue'
 import TestWork from '../components/TestWork.vue'
+import SideNav from '../components/SideNav.vue'
+import DashbdModal from '../components/DashbdModal.vue'
 
 
 
@@ -32,6 +34,16 @@ const routes = [
         path:'/test',
         component:TestWork,
         name:'test'
+    },
+    {
+        path:'/side',
+        component:SideNav,
+        name:'side'
+    },
+    {
+        path:'/dashboard/modal',
+        component:DashbdModal,
+        name:'dashModal'
     }
 ]
 
