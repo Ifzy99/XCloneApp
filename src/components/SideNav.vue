@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar" :class="{ 'open': isSidebarOpen }">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
+      <!-- <i class='bx bxl-c-plus-plus icon'></i> -->
         <!-- <div class="logo_name">CodingLab</div> -->
         <i class='bx bx-menu' id="btn"  @click="toggleSidebar"></i>
     </div>
@@ -69,7 +69,8 @@
      </li>
      <li>
       <div>
-        <button class="pstbTn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Post</button>
+        <!-- <button class="pstbTn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Post</button> -->
+                            <PostButton data-bs-target="#exampleModal" data-bs-toggle="modal" />
       </div>
      </li>
 
@@ -87,10 +88,19 @@
     </ul>
   </div>
  
+<DashbdModal/>
 </template>
 
 <script>
+import PostButton from './PostButton.vue';
+import DashbdModal from './DashbdModal.vue';
+
 export default {
+  components:{
+    PostButton,
+    DashbdModal,
+  },
+
     data() {
     return {
       isSidebarOpen: false

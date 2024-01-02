@@ -4,15 +4,16 @@
   <section class="home-section">
     
     <div class="allUserPost">
+         <small v-if="message">  {{ message }}</small>
+               <!-- Main Page Post Input  -->
                <div class="postSect bg bg-light">
                     <form @submit.prevent="savePost">
                       <div class="d-flex gap-2">
                         <div style="width: 50px;height: 50px;border-radius: 50%;" class="border bg-secondary"></div>
-                        <textarea name="content" id="" cols="80" rows="5" class="form-control bg-light" placeholder="What's happening...."  aria-describedby="emailHelp" style="justify-content:start; border:none;" v-model="v$.post.content.$model"></textarea>
+                        <textarea name="content" id="" cols="80" rows="5" class="form-control bg-light" placeholder="What's happening...."  aria-describedby="emailHelp" style="justify-content:start; border:none; width: 100%;" v-model="v$.post.content.$model"></textarea>
                       </div>
-                      <hr class="w-75 ms-5 me-5 text-secondary">
-                      <div class="postSectFooter d-flex gap-5 ms-5">
-                          <div class="postSectIcons d-flex gap-5 ms-5 mt-1">
+                      <div class="postSectFooter gap-5 ms-2">
+                          <div class="postSectIcons d-flex gap-4 ms-3 mt-2">
                               <div type="file" multiple><i class="fa-regular fa-image"></i></div>
                               <div><i class="fa-solid fa-bars-progress"></i></div>
                               <div><i class="fa-regular fa-face-smile"></i></div>
@@ -20,12 +21,15 @@
                               <div><i class="fa-solid fa-location-dot"></i></div>
                           </div>
                           <div class="pb-1">
-                            <button type="submit" class="btn text-light ps-4 pe-4" style="background:darkcyan; border-radius: 30px 30px 30px 30px;">Post</button>
+                            <PostButton/>
                           </div>
                       </div>
                     </form>
                </div>
+               <!-- Main Page Post Input  -->
+
               
+               <!-- Users Post  -->
               <div class="cad mt-3 my-3"  v-for="post in allpost" :key="post.id">
                   <div class="postHeader d-flex gap-2">
                       <div style="width: 50px;height: 50px;border-radius: 50%;" class="border bg-secondary"></div>
@@ -36,7 +40,7 @@
                   <div v-for="image in post.images" :key="image">
                       <img  :src="'http://localhost:8000/storage/'+image" v-if="post.image!==null" alt="image">
                   </div>
-                  <div class="icoons d-flex gap-5 mx-auto mt-3" style="justify-content: space-between; padding: 0 3rem;">
+                  <div class="icoons d-flex gap-4 mx-auto mt-3" style="justify-content: space-between; padding: 0 3rem;">
                       <p><i class="fa-regular fa-comment"></i></p>
                       <p><i class="fa-solid fa-arrows-rotate"></i></p>
                       <p><i class="fa-regular fa-heart"></i></p>
@@ -44,6 +48,8 @@
                       <p><i class="fa-regular fa-bookmark"></i></p>
                   </div>
               </div>
+               <!-- Users Post  -->
+
      </div>
 
   </section>
@@ -57,6 +63,7 @@
 <script>
 import SideNav from './SideNav.vue'
 import DashbdModal from './DashbdModal.vue';
+import PostButton from './PostButton.vue';
 import axios from 'axios';
 import useValidate from '@vuelidate/core'
 import { maxLength,} from '@vuelidate/validators';
@@ -64,7 +71,8 @@ import { maxLength,} from '@vuelidate/validators';
 export default {
   components:{
     SideNav,
-    DashbdModal
+    DashbdModal,
+    PostButton
   },
     beforeMount(){
         axios.get('http://localhost:8000/api/getPosts').then((res)=>{
@@ -85,7 +93,8 @@ export default {
             },
             images: [],
             allpost:[],
-            isSidebarOpen: false
+            isSidebarOpen: false,
+            message:''
           }
       },
 
@@ -122,6 +131,7 @@ export default {
             axios.post('http://localhost:8000/api/savePosts', formData).then((res)=>{
                  if (res.data.status) {
                     console.log(res.data.message);
+                    this.message = res.data.message
                  } else {
                     console.log(res.data.message);
                     
@@ -159,7 +169,9 @@ nav{
           width: 70%;
       }
       .postSectIcons{
-        color: darkcyan;
+        color: #426c94;
+        /* color: darkcyan; */
+
       }
       .cad{
         width: 100%;
@@ -167,7 +179,11 @@ nav{
         padding:10px;
       }
 
-.pstbTn{
+      .postSectFooter{
+        display: flex;
+      }
+
+/* .pstbTn{
       padding: 0.7rem 3rem 0.7rem 1rem;
       font-size: 16px;
       border-radius: 30px 30px 30px 30px;
@@ -178,6 +194,6 @@ nav{
       vertical-align: middle;
       width: 30%;
       align-self: start;
-      }
+      } */
 
 </style>

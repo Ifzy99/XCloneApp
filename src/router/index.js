@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HelloWorld from '../components/HelloWorld.vue'
+// import HelloWorld from '../components/HelloWorld.vue'
 import XHome from '../components/XHome.vue'
+import SignupModal from '../components/SignupModal.vue'
 import LogIn from '../components/LogIn.vue'
 import DashBoard from '../components/DashBoard.vue'
-import TestWork from '../components/TestWork.vue'
+import PostButton from '../components/PostButton.vue'
 import SideNav from '../components/SideNav.vue'
 import DashbdModal from '../components/DashbdModal.vue'
 
@@ -12,13 +13,18 @@ import DashbdModal from '../components/DashbdModal.vue'
 const routes = [
     {
         path:'/',
-        component:HelloWorld,
+        component:XHome,
         name: "Home"
     },
     {
         path: '/x',
         component:XHome,
         name: 'x'
+    },
+    {
+        path:'/signup',
+        component:SignupModal,
+        name:"signup"
     },
     {
         path:'/login',
@@ -31,9 +37,9 @@ const routes = [
         name:'dashboard'
     },
     {
-        path:'/test',
-        component:TestWork,
-        name:'test'
+        path:'/postBtn',
+        component:PostButton,
+        name:'postBtn'
     },
     {
         path:'/side',
