@@ -1,4 +1,5 @@
 <template>
+  <!-- Landing Page Content  -->
   <div class="homePg mx-auto ">
      <div class="xlogo">
         <img class="xl" src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.jpg" alt="X logo">
@@ -22,17 +23,19 @@
             <button class="bTn d-block text-primary" @click="userLogin">Sign in</button>
          </div>
      </div>
+  </div>
+  <!-- Landing Page Content  -->
 
-</div>
 
     <!-- SignUp Modal  -->   
-    <SignupModal/>
+        <SignupModal/>
+    <!-- SignUp Modal  -->   
+
 
 </template>
 
 <script>
 import SignupModal from './SignupModal.vue'
-// import axios from 'axios'
 
 export default {
   components:{

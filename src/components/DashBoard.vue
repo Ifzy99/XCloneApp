@@ -17,7 +17,7 @@
                               <div type="file" multiple><i class="fa-regular fa-image"></i></div>
                               <div><i class="fa-solid fa-bars-progress"></i></div>
                               <div><i class="fa-regular fa-face-smile"></i></div>
-                              <div><i class="fa-solid fa-clipboard-list"></i></div>
+                              <div><i class="fa-solid fa-clipboard-list"></i></div>z
                               <div><i class="fa-solid fa-location-dot"></i></div>
                           </div>
                           <div class="pb-1">
@@ -29,7 +29,7 @@
                <!-- Main Page Post Input  -->
 
               
-               <!-- Users Post  -->
+               <!--All Users Post  -->
               <div class="cad mt-3 my-3"  v-for="post in allpost" :key="post.id">
                   <div class="postHeader d-flex gap-2">
                       <div style="width: 50px;height: 50px;border-radius: 50%;" class="border bg-secondary"></div>
@@ -38,7 +38,7 @@
                   </div>
                   <p class="card-text text-start ms-5">{{ post.content }}</p>
                   <div v-for="image in post.images" :key="image">
-                      <img  :src="'http://localhost:8000/storage/'+image" v-if="post.image!==null" alt="image">
+                      <img class="postImg" :src="'http://localhost:8000/storage/'+image" v-if="post.image!==null" alt="image">
                   </div>
                   <div class="icoons d-flex gap-4 mx-auto mt-3" style="justify-content: space-between; padding: 0 3rem;">
                       <p><i class="fa-regular fa-comment"></i></p>
@@ -48,7 +48,7 @@
                       <p><i class="fa-regular fa-bookmark"></i></p>
                   </div>
               </div>
-               <!-- Users Post  -->
+               <!-- All Users Post  -->
 
      </div>
 
@@ -183,17 +183,10 @@ nav{
         display: flex;
       }
 
-/* .pstbTn{
-      padding: 0.7rem 3rem 0.7rem 1rem;
-      font-size: 16px;
-      border-radius: 30px 30px 30px 30px;
-      border: 0.6rem;
-      cursor: pointer;
-      background-color:darkcyan;
-      transition: all 0.5s; 
-      vertical-align: middle;
-      width: 30%;
-      align-self: start;
-      } */
+     /* .postImg{
+         display: flex;
+         flex-direction: row;
+         width:max-content;
+     } */
 
 </style>

@@ -1,6 +1,4 @@
 <template>
- 
-
 <!-- 
 <div class="parent">
 <div class="child child-1">
@@ -15,7 +13,6 @@
 </template>
 
 <script>
-// import DashbdModal from './DashbdModal.vue';
 
 export default {
     components:{
