@@ -17,7 +17,8 @@
                  <span class="text-sm" :class="{'text-danger':errors, 'text-success': !errors}">{{ message }}</span>
             </div> -->
 
-            <!-- <div class="text-center  {{ message ? 'success' : 'danger'}}">{{ meassage }}</div> -->
+            <!-- <div class="text-center  {{ Dmessage ? 'success' : 'danger'}}">{{ Dmessage }}</div> -->
+            <small v-if="message">{{ message }}</small>
 
              <form  @submit.prevent="handleSubmit">
                 <div class="form-group mt-3">
@@ -171,14 +172,12 @@ export default {
       }
 },
       methods:{
-        handleSubmit(){
-          alert('hello')
-        // console.log(this.v$.form);
+        handleSubmit(){          
+        console.log(this.v$.form);
         if(this.v$.form.$invalid){
             console.log("Form is invalid");
         }else{
             axios.post('http://localhost:8000/api/register', this.form).then((res)=>{
-                // console.log(res)
                 if(res.data.status){
                     this.message = res.data.message
                     console.log(this.message);
@@ -186,6 +185,7 @@ export default {
                 }else{
                     this.errors = res.data.errors
                     console.log(this.errors);
+                    this.$router.push('/')
                 }
             })
         }

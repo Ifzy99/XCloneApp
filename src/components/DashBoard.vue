@@ -149,8 +149,6 @@ export default {
 
 }
         
-    
-
 </script>
 
 <style>
@@ -182,11 +180,5 @@ nav{
       .postSectFooter{
         display: flex;
       }
-
-     /* .postImg{
-         display: flex;
-         flex-direction: row;
-         width:max-content;
-     } */
 
 </style>

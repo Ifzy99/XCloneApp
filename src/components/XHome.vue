@@ -1,4 +1,5 @@
 <template>
+
   <!-- Landing Page Content  -->
   <div class="homePg mx-auto ">
      <div class="xlogo">
@@ -151,5 +152,9 @@ methods: {
    .bldTxt h3{
     font-size: 1.5rem;
    } 
+   .bTn{
+    font-size: 12px;
+    font-weight: 900;
+   }
    }
 </style>
