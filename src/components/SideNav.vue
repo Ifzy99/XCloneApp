@@ -80,7 +80,7 @@
            <img src="../assets/logo.png" alt="profileImg">
            <div class="name_job">
              <div class="name">Ifzy</div>
-             <div class="job">Web designer</div>
+             <div class="job">Web Designer</div>
            </div>
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
@@ -143,7 +143,8 @@ export default {
   background: #11101D;
   padding: 6px 14px;
   z-index: 99;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
+  transition: transform 0.3s ease-in-out;
 }
 .sidebar.open{
   width: 250px;
@@ -378,4 +379,6 @@ export default {
     display: none;
   }
 }
+
+
 </style>
