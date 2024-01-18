@@ -1,7 +1,7 @@
 <template>
 
   <!-- Landing Page Content  -->
-  <div class="homePg mx-auto ">
+  <div class="homePg">
      <div class="xlogo">
         <img class="xl" src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.jpg" alt="X logo">
      </div>
@@ -53,16 +53,11 @@ export default {
 },
 
 methods: {
-    // userSignup(){
-    //   this.$router.push({path: '/signup'})
-    // },
-
     userLogin(){
         this.$router.push('/login')
     },
 
 }
-
 
 }
 </script>
@@ -85,6 +80,7 @@ methods: {
       display: flex;
       justify-content:space-between ;
       padding-top: 3rem;
+      margin: 0 auto;
    }
    .bldTxt h1{
     font-size: 3.75em;
@@ -111,7 +107,7 @@ methods: {
     font-size: 16px;
     font-weight: 600;
     border-radius: 30px 30px 30px 30px;
-    border: 0.5rem;
+    border: 1px solid rgb(195, 195, 195);
     cursor: pointer;
     transition: all 0.5s;
     vertical-align: middle;
@@ -134,7 +130,7 @@ methods: {
       display: flex;
       flex-direction: column;
       margin-top: -3.6rem;
-      padding-left: 1rem;
+      padding-left: 2rem;
    }
    .xlogo{
     margin: -7rem 0 0 1.3rem;
@@ -148,6 +144,7 @@ methods: {
    } 
    .bldTxt h1{
     font-size: 2.75em;
+    width: 60%;
    }  
    .bldTxt h3{
     font-size: 1.5rem;
@@ -155,6 +152,7 @@ methods: {
    .bTn{
     font-size: 12px;
     font-weight: 900;
+    width: 80%;
    }
    }
 </style>

@@ -17,7 +17,7 @@
                               <div type="file" multiple><i class="fa-regular fa-image"></i></div>
                               <div><i class="fa-solid fa-bars-progress"></i></div>
                               <div><i class="fa-regular fa-face-smile"></i></div>
-                              <div><i class="fa-solid fa-clipboard-list"></i></div>z
+                              <div><i class="fa-solid fa-clipboard-list"></i></div>
                               <div><i class="fa-solid fa-location-dot"></i></div>
                           </div>
                           <div class="pb-1">
@@ -40,7 +40,7 @@
                   <div v-for="image in post.images" :key="image">
                       <img class="postImg" :src="'http://localhost:8000/storage/'+image" v-if="post.image!==null" alt="image">
                   </div>
-                  <div class="icoons d-flex gap-4 mx-auto mt-3" style="justify-content: space-between; padding: 0 3rem;">
+                  <div class="icoons d-flex  mt-3" style="justify-content: space-evenly; padding: 0 3rem;">
                       <p><i class="fa-regular fa-comment"></i></p>
                       <p><i class="fa-solid fa-arrows-rotate"></i></p>
                       <p><i class="fa-regular fa-heart"></i></p>
