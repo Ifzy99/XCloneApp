@@ -2,7 +2,7 @@
   <form @submit.prevent="logger">
    <div class="container">
         <div class="card">
-            <a class="singup">Sign in to X</a>
+            <a class="signin">Sign in to X</a>
             <div class="inputBox1">
                 <input type="text" required="required" name="email"   v-model="v$.login.email.$model"/>
                 <span class="user">Email</span>
@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style>
-.singup {
+.signin {
   color: #000;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -211,5 +211,13 @@ export default {
 .enter:hover {
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+@media (max-width:768px){
+  .card {
+  min-height: 550px;
+  width: 350px;
+}
+
 }
 </style>

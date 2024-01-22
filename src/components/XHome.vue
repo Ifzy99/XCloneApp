@@ -56,7 +56,6 @@ methods: {
     userLogin(){
         this.$router.push('/login')
     },
-
 }
 
 }
@@ -133,11 +132,11 @@ methods: {
       padding-left: 2rem;
    }
    .xlogo{
-    margin: -7rem 0 0 1.3rem;
+    margin: -7rem 0 0 0.7rem;
     text-align: start;
    } 
    .xl{
-    width: 15%;
+    width: 18%;
    } 
    .bldTxt{
     margin:4rem 0 ;
